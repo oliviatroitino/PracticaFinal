@@ -1,0 +1,19 @@
+PORT = 3000
+DB_URI = mongodb+srv://oliviatroitino:jOe7Lfz1a1ID0DOK@cluster0.3baz3.mongodb.net/practicaIntermedia
+PUBLIC_URL = http://localhost:3000
+
+# OAuth
+EMAIL = oliviatroitino.uni@gmail.com
+CLIENT_ID = 
+CLIENT_SECRET = 
+REFRESH_TOKEN = 
+REDIRECT_URI = 
+
+# Pinata
+PINATA_GATEWAY_URL = 
+PINATA_KEY = 
+PINATA_SECRET_KEY = 
+
+# JWT
+API_KEY = 
+JWT_SECRET = 
