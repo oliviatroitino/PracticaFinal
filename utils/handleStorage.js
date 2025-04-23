@@ -5,18 +5,18 @@ const storage = multer.diskStorage({
         const pathStorage = __dirname+"/../storage"
         callback(null, pathStorage) // error y destination
     },
-    filename:function(req, file, callback){ // sobreescribimos o renombramos
-        // tienen extension jpg, pdf, mp4
+    /* filename:function(req, file, callback){ 
         const ext = file.originalname.split(".").pop() // el ultimo valor
         const filename = "file-"+Date.now()+"."+ext
         callback(null, filename)
-    }
+    } */
 })
 
 const uploadMiddleware = multer({
     storage,
     limits: {
-        fileSize: 1024 * 1024 * 5 
+        fileSize: 1024 * 1024 * 5,
+        files: 1
     }
 })
 
