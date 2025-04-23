@@ -3,6 +3,11 @@ const mongooseDelete = require("mongoose-delete");
 
 const ClientSchema = mongoose.Schema(
     {
+        userId: {
+            type: mongoose.Schema.Types.ObjectId, 
+            ref: "user", 
+            required: true 
+        },
         name: {
             type: String,
             required: true
