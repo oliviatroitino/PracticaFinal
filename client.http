@@ -1,0 +1,56 @@
+### Email usado generado con https://temp-mail.org/en/
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTM5Nzc0NiwiZXhwIjoxNzQ1NDA0OTQ2fQ.S7YPLSLzxgI2xwBx4DV6-tGOgmdEGx7e_jeSYTQ3dVo
+@email = podim46911@lushosa.com
+@clientId = 6808a24aa080bb9e29ccdf40
+@userId = 68089b87e287d2e2e5bfa541
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "claveSegura123"
+}
+
+### Obtener datos del usuario autenticado
+GET http://localhost:3000/users/user
+Authorization: Bearer {{token}}
+
+### createClient
+POST http://localhost:3000/clients/create-client
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "cif": "A12345678",
+    "address": {
+        "street": "Main Street",
+        "number": 123,
+        "postal": 12345,
+        "city": "Springfield",
+        "province": "Illinois"
+    }
+}
+
+### getClient
+GET http://localhost:3000/clients/{{clientId}}
+Authorization: Bearer {{token}}
+
+### updateClient
+PATCH http://localhost:3000/clients/{{clientId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "John Doe Updated",
+    "cif": "A12345678",
+    "address": {
+        "street": "Updated Street",
+        "number": 456,
+        "postal": 54321,
+        "city": "Updated City",
+        "province": "Updated Province"
+    }
+}

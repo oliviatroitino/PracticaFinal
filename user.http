@@ -1,0 +1,104 @@
+### Email usado generado con https://temp-mail.org/en/
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTM5NDU5MSwiZXhwIjoxNzQ1NDAxNzkxfQ.sdm9xcnEY8T19zRU89Lac7YGKmNKzL2Y0AszojT-HeE
+@email = podim46911@lushosa.com
+@validationCode = 628698
+@recoveryCode = ""
+
+### Registro de usuario
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "claveSegura123"
+}
+
+### Validación del código
+POST http://localhost:3000/users/validate
+Content-Type: application/json
+
+{
+  "email": "{{email}}", 
+  "code": "{{validationCode}}"
+}
+
+### Reenviar código
+POST http://localhost:3000/users/resend-code
+Content-Type: application/json
+
+{
+  "email": "{{email}}"
+}
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "claveSegura123"
+}
+
+### Onboarding (patch/update User)
+PATCH http://localhost:3000/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Olivia",
+  "surname": "Troitino",
+  "nif": "12345678Z"
+}
+
+### Onboarding (patch/update Company)
+PATCH http://localhost:3000/users/company
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "companyName": "Company Name",
+  "companyCif": "B12345678",
+  "companyAddress": "Calle Falsa 123, Madrid"
+}
+
+### Upload Logo
+PATCH http://localhost:3000/users/logo HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="image"; filename="logo.png"
+Content-Type: image/png
+
+< ./storage/logo.png
+--boundary--
+
+### Enviar código de recuperación
+POST http://localhost:3000/users/send-recovery-code
+Content-Type: application/json
+
+{
+  "email": "{{email}}"
+}
+
+### Recuperar contraseña
+PATCH http://localhost:3000/users/recover-password
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "code": {{recoveryCode}},
+  "newPassword": "claveSegura123"
+}
+
+### Soft delete (por defecto)
+DELETE http://localhost:3000/users/
+Authorization: Bearer {{token}}
+
+### Hard delete (elimina permanentemente)
+DELETE http://localhost:3000/users?soft=false 
+Authorization: Bearer {{token}}
+
+### Obtener datos del usuario autenticado
+GET http://localhost:3000/users/user
+Authorization: Bearer {{token}}
