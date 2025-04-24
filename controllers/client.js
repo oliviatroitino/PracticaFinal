@@ -47,30 +47,21 @@ const getClient = async (req, res) => {
     }
 }
 
-/* const updateClient = async (req, res) => {
+const updateClient = async (req, res) => {
     try {
         const user = req.user;
+
         if (!user) {
             return handleHttpError(res, 'ERROR_USER_NOT_FOUND', 403);
         }
-
-        console.log(`user: ${user} \nuser id: ${user.id}`);
-
-        const { id, ...body } = matchedData(req); 
-
-        console.log(`body: ${body}`);
-
-        const client = await ClientModel.findOne({_id: id});
-
-        console.log(`client: ${client}`);
+        const id = req.params.id;
+        const body = req.body;
 
         const updatedClient = await ClientModel.findOneAndUpdate(
             { _id: id, userId: user._id }, 
             body,
             { new: true }
         );
-
-        console.log(`updatedClient: ${updatedClient}`);
 
         if (!updatedClient) {
             return handleHttpError(res, 'ERROR_CLIENT_NOT_FOUND', 404);
@@ -81,6 +72,6 @@ const getClient = async (req, res) => {
         console.error(`ERROR in updateClient: ${error}`);
         handleHttpError(res, 'ERROR_UPDATE_CLIENT', 403);
     }
-}; */
+};
 
-module.exports = { createClient, getClient, getClients };
+module.exports = { createClient, getClient, getClients, updateClient };

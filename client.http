@@ -1,5 +1,5 @@
 ### Email usado generado con https://temp-mail.org/en/
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTM5Nzc0NiwiZXhwIjoxNzQ1NDA0OTQ2fQ.S7YPLSLzxgI2xwBx4DV6-tGOgmdEGx7e_jeSYTQ3dVo
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTQ4NzIwOSwiZXhwIjoxNzQ1NDk0NDA5fQ.JWeM2WRXnlrc4S0SLZ8HblDVU_mE5vPXHJU6OFWEgkM
 @email = podim46911@lushosa.com
 @clientId = 6808a24aa080bb9e29ccdf40
 @userId = 68089b87e287d2e2e5bfa541
@@ -38,8 +38,13 @@ Content-Type: application/json
 GET http://localhost:3000/clients/{{clientId}}
 Authorization: Bearer {{token}}
 
+### getClients
+GET http://localhost:3000/clients/
+Authorization: Bearer {{token}}
+
+
 ### updateClient
-PATCH http://localhost:3000/clients/{{clientId}}
+PUT http://localhost:3000/clients/{{clientId}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
