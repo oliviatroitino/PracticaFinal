@@ -1,7 +1,7 @@
 ### Email usado generado con https://temp-mail.org/en/
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTQ4NzIwOSwiZXhwIjoxNzQ1NDk0NDA5fQ.JWeM2WRXnlrc4S0SLZ8HblDVU_mE5vPXHJU6OFWEgkM
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTQ4ODI4MiwiZXhwIjoxNzQ1NDk1NDgyfQ.7PTSft69In44pduHdgcfzuldPw4IZ5BkdxzZbUF9_yY
 @email = podim46911@lushosa.com
-@clientId = 6808a24aa080bb9e29ccdf40
+@clientId = 680a09aa59a82c110730d1c3
 @userId = 68089b87e287d2e2e5bfa541
 
 ### Login
@@ -23,12 +23,12 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "cif": "A12345678",
+    "name": "John Doe 2",
+    "cif": "A23456789",
     "address": {
-        "street": "Main Street",
-        "number": 123,
-        "postal": 12345,
+        "street": "Not Main Street",
+        "number": 122,
+        "postal": 54321,
         "city": "Springfield",
         "province": "Illinois"
     }
@@ -42,9 +42,8 @@ Authorization: Bearer {{token}}
 GET http://localhost:3000/clients/
 Authorization: Bearer {{token}}
 
-
 ### updateClient
-PUT http://localhost:3000/clients/{{clientId}}
+PATCH http://localhost:3000/clients/{{clientId}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 

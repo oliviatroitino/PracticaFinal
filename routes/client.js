@@ -5,8 +5,8 @@ const { validatorCreateClient, validatorGetClient, validatorUpdateClient } = req
 const authMiddleware = require("../middleware/session.js");
 
 router.post('/create-client', authMiddleware, validatorCreateClient, createClient);
-router.put('/:id', authMiddleware, validatorUpdateClient, updateClient);
+router.patch('/:id', authMiddleware, validatorUpdateClient, updateClient);
 router.get('/:id', authMiddleware, validatorGetClient, getClient);
-router.get('/', authMiddleware, validatorGetClient, getClients);
+router.get('/', authMiddleware, getClients);
 
 module.exports = router;
