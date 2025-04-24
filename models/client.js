@@ -32,6 +32,10 @@ const ClientSchema = mongoose.Schema(
             province: {
                 type: String
             }
+        },
+        deleted: {
+            type: Boolean,
+            default: false
         }
     }
 );
