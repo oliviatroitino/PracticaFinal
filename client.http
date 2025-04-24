@@ -1,5 +1,5 @@
 ### Email usado generado con https://temp-mail.org/en/
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTQ4ODI4MiwiZXhwIjoxNzQ1NDk1NDgyfQ.7PTSft69In44pduHdgcfzuldPw4IZ5BkdxzZbUF9_yY
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA4OWI4N2UyODdkMmUyZTViZmE1NDEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTQ4OTg3NiwiZXhwIjoxNzQ1NDk3MDc2fQ.lRphiykw0rZDLvk2IV0lBVM6viQADcdqXqHj_amvka0
 @email = podim46911@lushosa.com
 @clientId = 680a09aa59a82c110730d1c3
 @userId = 68089b87e287d2e2e5bfa541
@@ -58,3 +58,7 @@ Content-Type: application/json
         "province": "Updated Province"
     }
 }
+
+### deleteClient
+DELETE http://localhost:3000/clients/{{clientId}}
+Authorization: Bearer {{token}}
